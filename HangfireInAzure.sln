@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.757
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HangfireInAzure", "HangfireInAzure\HangfireInAzure.csproj", "{4B2CFE04-E342-41FF-934D-31AF01A2262E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HangfireInAzureTemp", "HangfireInAzureTemp\HangfireInAzureTemp.csproj", "{4B2CFE04-E342-41FF-934D-31AF01A2262E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
