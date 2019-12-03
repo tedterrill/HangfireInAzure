@@ -5,7 +5,8 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Threading.Tasks;
 
-namespace HangfireInAzureTemp {
+namespace HangfireInAzure {
+    // To learn more about Microsoft Azure WebJobs SDK, please see https://go.microsoft.com/fwlink/?LinkID=320976
     public class Program {
         // Please set the following connection strings in app.config for this WebJob to run:
         // AzureWebJobsDashboard and AzureWebJobsStorage
@@ -22,18 +23,19 @@ namespace HangfireInAzureTemp {
                               })
                               .ConfigureServices((context, services) => {
                                   services
-                                      .AddSingleton(context.Configuration)
-                                      // register the class that contains our Hangfire RunServer function
-                                      //.AddScoped<HangfireServer, HangfireServer>()
-                                      ;
+                                      .AddSingleton(context.Configuration);
                               })
                               .UseConsoleLifetime();
 
             using (var host = hostBuilder.Build()) {
                 var logger = host.Services.GetService<ILogger<Program>>();
-                
+
                 try {
-                    var watcher = new WebJobsShutdownWatcher();
+#if DEBUG
+                    Environment.SetEnvironmentVariable("WEBJOBS_SHUTDOWN_FILE", "c:\\temp\\WebJobsShutdown");
+#endif
+                    
+                    var watcher           = new WebJobsShutdownWatcher();
                     var cancellationToken = watcher.Token;
 
                     logger.LogInformation("Starting the host");
@@ -46,7 +48,7 @@ namespace HangfireInAzureTemp {
                                      cancellationToken: cancellationToken)
                           .ContinueWith(result => {
                               logger.LogInformation(
-                                  $"The Hangfire server stopped with state: {result.Status}");
+                                  $"The job host stopped with state: {result.Status}");
                           }, cancellationToken);
                 }
                 catch (Exception ex) {

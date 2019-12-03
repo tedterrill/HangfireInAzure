@@ -6,7 +6,7 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace HangfireInAzure {
+namespace HangfireInAzureTemp {
     public class HangfireServer {
         private static void ConfigureServices(IServiceCollection services) {
             services.AddLogging(loggingBuilder => {

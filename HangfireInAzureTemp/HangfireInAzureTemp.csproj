@@ -7,8 +7,8 @@
     <ProjectGuid>{4B2CFE04-E342-41FF-934D-31AF01A2262E}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HangfireInAzure</RootNamespace>
-    <AssemblyName>HangfireInAzure</AssemblyName>
+    <RootNamespace>HangfireInAzureTemp</RootNamespace>
+    <AssemblyName>HangfireInAzureTemp</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

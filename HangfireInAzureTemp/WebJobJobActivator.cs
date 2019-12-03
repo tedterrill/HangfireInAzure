@@ -1,7 +1,7 @@
 ﻿using Microsoft.Azure.WebJobs.Host;
 using System;
 
-namespace HangfireInAzure {
+namespace HangfireInAzureTemp {
     public class WebJobJobActivator : IJobActivator {
         private readonly IServiceProvider _service;
 

@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Logging;
 using System.Threading;
 
-namespace HangfireInAzure {
+namespace HangfireInAzureTemp {
     public class MyTask {
         private readonly ILogger<MyTask> _logger;
 

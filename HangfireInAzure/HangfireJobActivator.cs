@@ -3,7 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Linq;
 
-namespace HangfireInAzureTemp {
+namespace HangfireInAzure {
     public class HangfireJobActivator : JobActivator {
         private readonly IServiceProvider _serviceProvider;
 
