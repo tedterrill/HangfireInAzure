@@ -1,27 +1,25 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
-  <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>net472</TargetFramework>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Hangfire" Version="1.7.6" />
-    <PackageReference Include="Microsoft.Azure.WebJobs.Extensions" Version="3.0.2" />
-    <PackageReference Include="Microsoft.Azure.WebJobs.Extensions.Storage" Version="3.0.8" />
-    <PackageReference Include="Microsoft.Azure.WebJobs.Host.Storage" Version="3.0.13" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.0.0" />
-    <PackageReference Include="Microsoft.Extensions.Logging" Version="3.0.0" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="3.0.0" />
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
-    <PackageReference Include="System.Spatial" Version="5.8.4" />
-    <PackageReference Include="Microsoft.Data.Edm" Version="5.8.4" />
-    <PackageReference Include="Microsoft.Data.OData" Version="5.8.4" />
-    <PackageReference Include="Microsoft.Data.Services.Client" Version="5.8.4" />
-    <PackageReference Include="Microsoft.WindowsAzure.ConfigurationManager" Version="3.2.1" />
-    <PackageReference Include="WindowsAzure.Storage" Version="9.3.1" />
-    <PackageReference Include="Microsoft.Azure.WebJobs.Core" Version="3.0.13" />    
-    <PackageReference Include="Microsoft.Azure.WebJobs" Version="3.0.13" />
-    <PackageReference Include="Microsoft.Azure.KeyVault.Core" Version="1.0.0" />
-  </ItemGroup>
-</Project>
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <connectionStrings>
+    <add name="Hangfire" providerName="System.Data.SqlClient" connectionString="Server={SERVER};Database=Hangfire;User ID={USERID};Password={PW};Enlist=True" />
+    <!-- The format of the connection string is "DefaultEndpointsProtocol=https;AccountName=NAME;AccountKey=KEY" -->
+    <!-- For local execution, the value can be set either in this config file or through environment variables -->
+    <add name="AzureWebJobsDashboard" connectionString="UseDevelopmentStorage=true" />
+    <add name="AzureWebJobsStorage" connectionString="UseDevelopmentStorage=true" />
+  </connectionStrings>
+    <startup>
+      <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.7.2" />
+    </startup>
+  <runtime>
+    <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
+      <dependentAssembly>
+        <assemblyIdentity name="Microsoft.WindowsAzure.Storage" publicKeyToken="31bf3856ad364e35" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-7.0.0.0" newVersion="7.0.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="Newtonsoft.Json" publicKeyToken="30ad4fe6b2a6aeed" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-11.0.0.0" newVersion="11.0.0.0" />
+      </dependentAssembly>
+    </assemblyBinding>
+  </runtime>
+</configuration>
